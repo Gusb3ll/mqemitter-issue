@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common'
-import { GraphQLModule } from '@nestjs/graphql'
-import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius'
+import { Module } from "@nestjs/common";
+import { GraphQLModule } from "@nestjs/graphql";
+import { MercuriusDriver, MercuriusDriverConfig } from "@nestjs/mercurius";
 
-import { mqemitter } from './libs/emitter'
-import { UserModule } from './gql/user/user.module'
+import { mqemitter } from "./libs/emitter";
+import { UserModule } from "./gql/user/user.module";
 
 @Module({
 	imports: [
@@ -12,10 +12,10 @@ import { UserModule } from './gql/user/user.module'
 			autoSchemaFile: true,
 			//! Error when emitter is called
 			subscription: {
-				emitter: mqemitter
-			}
+				emitter: mqemitter,
+			},
 		}),
-		UserModule
-	]
+		UserModule,
+	],
 })
 export class AppModule {}

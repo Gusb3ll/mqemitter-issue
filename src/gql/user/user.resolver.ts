@@ -1,6 +1,6 @@
-import { Resolver, Query } from '@nestjs/graphql'
+import { Resolver, Query } from "@nestjs/graphql";
 
-import { UserService } from './user.service'
+import { UserService } from "./user.service";
 
 @Resolver()
 export class UserResolver {
@@ -8,6 +8,6 @@ export class UserResolver {
 
 	@Query(() => String)
 	hello(): string {
-		return this.service.hello()
+		return this.service.hello();
 	}
 }
